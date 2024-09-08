@@ -30,8 +30,8 @@ function determinePerformanceRating(avgsales){
         return "Invalid"
     }
 }
+
 // Step #3 
-return [topPerformer,bottomPerformer]
 
 
 function findTopAndBottomPerformers_withReduce(persons){
