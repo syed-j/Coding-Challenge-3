@@ -30,3 +30,24 @@ function determinePerformanceRating(avgsales){
         return "Invalid"
     }
 }
+// Step #3 
+return [topPerformer,bottomPerformer]
+
+
+function findTopAndBottomPerformers_withReduce(persons){
+    let topPerformer = persons.reduce((top_performer,other_performer) => {
+        if (other_performer.total_sales > top_performer.total_sales){
+            top_performer = other_performer
+        }
+        return top_performer 
+    }, persons[0] )
+
+    let bottomPerformer = persons.reduce((bottom_performer,other_performer)=>{
+        if (other_performer.total_sales < bottom_performer.total_sales){
+            bottom_performer = other_performer
+        }
+        return bottom_performer
+    },persons[0])
+
+    return [topPerformer,bottomPerformer];
+}
