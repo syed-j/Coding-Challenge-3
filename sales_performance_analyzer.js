@@ -11,3 +11,22 @@ function calculateAverageSales(sales) {
  
      return averageSales;
  }
+//  step #2
+
+function determinePerformanceRating(avgsales){
+    if (avgsales > 10000) {
+        return "Excellent"
+    }
+    else if ((avgsales < 10000) && (avgsales > 7000)){
+        return "Good"
+    }
+    else if ((avgsales < 7000) && (avgsales > 4000)){
+        return "Satisfactory"
+    }
+    else if (avgsales < 4000){
+        return "Needs Improvement"
+    }
+    else{
+        return "Invalid"
+    }
+}
