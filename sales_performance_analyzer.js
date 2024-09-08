@@ -51,3 +51,29 @@ function findTopAndBottomPerformers_withReduce(persons){
 
     return [topPerformer,bottomPerformer];
 }
+
+//Step #4
+
+const salesData = [
+    { name: 'Alice', sales: [12000, 15000, 13000] },
+    { name: 'Bob', sales: [7000, 6000, 7500] },
+    { name: 'Charlie', sales: [3000, 4000, 3500] },
+    { name: 'Diana', sales: [9000, 8500, 9200] }
+  ];
+  
+function generatePerformanceReport(salesdata){
+    for (let i=0; i < salesdata.length; i++){
+        salesdata[i].avg  = calculateAverageSales(salesdata[i].sales)
+        salesdata[i].performaceRating = determinePerformanceRating(salesdata[i].avg)
+        salesdata[i].total_sales =  salesdata[i].sales.reduce((sum,currentValue) => sum+currentValue,0)
+    };
+    let [topPerformer, bottomPerformer] = findTopAndBottomPerformers_withReduce(salesdata);
+
+    console.log(salesdata)
+    console.log(topPerformer)
+    console.log(bottomPerformer)
+    
+}
+
+// console.log(generatePerformanceReport(salesData))
+generatePerformanceReport(salesData)
